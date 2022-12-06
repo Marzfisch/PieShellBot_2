@@ -4,7 +4,7 @@ import com.archerfish.behavior.InitialBankCheckBranch;
 import com.archerfish.behavior.PieDishBranch;
 import com.archerfish.behavior.initialBankCheckLeafs.InitialCheckBankLeaf;
 import com.archerfish.behavior.initialBankCheckLeafs.InitialRunToBankLeaf;
-import com.archerfish.behavior.pieDishLeafs.PieDishLeaf;
+import com.archerfish.behavior.pieDishLeafs.HasEnoughSoftClayLeaf;
 import com.archerfish.behavior.pieDishLeafs.PieDishLeafTwo;
 import org.dreambot.api.script.AbstractScript;
 import org.dreambot.api.script.Category;
@@ -48,7 +48,7 @@ public class Main extends AbstractScript implements PaintInfo {
 
         tree.addBranches(
                 initialBankCheckBranch.addLeafs(new InitialRunToBankLeaf(), new InitialCheckBankLeaf()),
-                pieDishBranch.addLeafs(new PieDishLeaf(), new PieDishLeafTwo()));
+                pieDishBranch.addLeafs(new HasEnoughSoftClayLeaf(), new PieDishLeafTwo()));
     }
 
 
