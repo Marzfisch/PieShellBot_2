@@ -33,7 +33,7 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-@ScriptManifest(category = Category.MISC, author = "Very Cool Author", name = "TreeBranchExample", description = "Very cool example", version = 1)
+@ScriptManifest(category = Category.MISC, author = "Malls Archerfish", name = "Pie Shell Bot v2", description = "An AIO bot to make pie shells", version = 0.01)
 public class Main extends AbstractScript implements PaintInfo {
 
     /**
