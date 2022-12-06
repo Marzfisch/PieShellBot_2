@@ -2,28 +2,13 @@ package org.dreambot;
 
 import com.archerfish.behavior.InitialBankCheckBranch;
 import com.archerfish.behavior.PieDishBranch;
-import com.archerfish.behavior.initialBankCheckLeafs.InitialBankCheckLeaf;
+import com.archerfish.behavior.initialBankCheckLeafs.InitialCheckBankLeaf;
 import com.archerfish.behavior.initialBankCheckLeafs.InitialRunToBankLeaf;
 import com.archerfish.behavior.pieDishLeafs.PieDishLeaf;
 import com.archerfish.behavior.pieDishLeafs.PieDishLeafTwo;
-import org.dreambot.api.Client;
-import org.dreambot.api.methods.Calculations;
-import org.dreambot.api.methods.MethodProvider;
-import org.dreambot.api.methods.container.impl.Inventory;
-import org.dreambot.api.methods.container.impl.bank.Bank;
-import org.dreambot.api.methods.container.impl.equipment.EquipmentSlot;
-import org.dreambot.api.methods.dialogues.Dialogues;
-import org.dreambot.api.methods.filter.Filter;
-import org.dreambot.api.methods.interactive.Players;
-import org.dreambot.api.methods.login.LoginUtility;
-import org.dreambot.api.methods.walking.impl.Walking;
 import org.dreambot.api.script.AbstractScript;
 import org.dreambot.api.script.Category;
 import org.dreambot.api.script.ScriptManifest;
-import org.dreambot.api.wrappers.items.Item;
-import org.dreambot.behaviour.ExampleBranch;
-import org.dreambot.behaviour.exampleLeafs.ExampleLeaf;
-import org.dreambot.behaviour.exampleLeafs.ExampleLeafTwo;
 import org.dreambot.framework.Branch;
 import org.dreambot.framework.Tree;
 import org.dreambot.paint.CustomPaint;
@@ -31,13 +16,6 @@ import org.dreambot.paint.PaintInfo;
 import org.dreambot.utilities.API;
 
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.function.Predicate;
 
 @ScriptManifest(category = Category.MISC, author = "Malls Archerfish", name = "Pie Shell Bot v2", description = "An AIO bot to make pie shells", version = 0.01)
 public class Main extends AbstractScript implements PaintInfo {
@@ -69,7 +47,7 @@ public class Main extends AbstractScript implements PaintInfo {
         pieDishBranch = new PieDishBranch();
 
         tree.addBranches(
-                initialBankCheckBranch.addLeafs(new InitialRunToBankLeaf(), new InitialBankCheckLeaf()),
+                initialBankCheckBranch.addLeafs(new InitialRunToBankLeaf(), new InitialCheckBankLeaf()),
                 pieDishBranch.addLeafs(new PieDishLeaf(), new PieDishLeafTwo()));
     }
 
