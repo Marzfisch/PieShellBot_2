@@ -1,5 +1,11 @@
 package org.dreambot;
 
+import com.archerfish.behavior.InitialBankCheckBranch;
+import com.archerfish.behavior.PieDishBranch;
+import com.archerfish.behavior.initialBankCheckLeafs.InitialBankCheckLeaf;
+import com.archerfish.behavior.initialBankCheckLeafs.InitialRunToBankLeaf;
+import com.archerfish.behavior.pieDishLeafs.PieDishLeaf;
+import com.archerfish.behavior.pieDishLeafs.PieDishLeafTwo;
 import org.dreambot.api.Client;
 import org.dreambot.api.methods.Calculations;
 import org.dreambot.api.methods.MethodProvider;
@@ -55,14 +61,16 @@ public class Main extends AbstractScript implements PaintInfo {
 
 
     private final Tree<Main> tree = new Tree<>();
-    private Branch<Main> exampleBranch;
+    private Branch<Main> initialBankCheckBranch;
+    private Branch<Main> pieDishBranch;
 
     private void instantiateTree() {
-        exampleBranch = new ExampleBranch();
+        initialBankCheckBranch = new InitialBankCheckBranch();
+        pieDishBranch = new PieDishBranch();
 
         tree.addBranches(
-                exampleBranch.addLeafs(new ExampleLeaf(), new ExampleLeafTwo())
-        );
+                initialBankCheckBranch.addLeafs(new InitialRunToBankLeaf(), new InitialBankCheckLeaf()),
+                pieDishBranch.addLeafs(new PieDishLeaf(), new PieDishLeafTwo()));
     }
 
 
