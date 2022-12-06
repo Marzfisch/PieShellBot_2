@@ -1,14 +1,15 @@
 package com.archerfish.behavior.pieDishLeafs;
 
+import com.archerfish.behavior._DynamicVariables;
 import org.dreambot.Main;
 import org.dreambot.api.methods.Calculations;
 import org.dreambot.framework.Leaf;
 
-public class PieDishLeaf extends Leaf<Main> {
+public class HasEnoughSoftClayLeaf extends Leaf<Main> {
 
     @Override
     public boolean isValid() {
-        return true;
+        return _DynamicVariables.bankedSoftClay > 150;
     }
 
     @Override
