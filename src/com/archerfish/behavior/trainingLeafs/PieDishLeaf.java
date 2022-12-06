@@ -4,7 +4,7 @@ import org.dreambot.Main;
 import org.dreambot.api.methods.Calculations;
 import org.dreambot.framework.Leaf;
 
-public class TrainingLeaf extends Leaf<Main> {
+public class PieDishLeaf extends Leaf<Main> {
 
     @Override
     public boolean isValid() {
