@@ -1,5 +1,6 @@
 package com.archerfish.behavior.initialBankCheckLeafs;
 
+import com.archerfish.api.myBank;
 import com.archerfish.api.myPlayer;
 import com.archerfish.behavior._DynamicVariables;
 import org.dreambot.Main;
@@ -19,8 +20,13 @@ public class InitialCheckBankLeaf extends Leaf<Main> {
     public int onLoop() {
         Bank.open();
         Sleep.sleepUntil(Bank::isOpen, 15_000);
-        Sleep.sleep(10_000);
         _DynamicVariables.initiallyCheckedBank = true;
+        _DynamicVariables.bankedSoftClay = Bank.count("Soft clay");
+        _DynamicVariables.bankedClay = Bank.count("Clay");
+        _DynamicVariables.bankedJugs = Bank.count("Jug");
+        _DynamicVariables.bankedJugsOfWater = Bank.count("Jug of water");
+        myBank.bankedCoins = Bank.count("Coins");
+        Sleep.sleep(10_000);
         return (int) Calculations.nextGaussianRandom(350, 250);
     }
 }
