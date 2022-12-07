@@ -4,6 +4,11 @@ public class _DynamicVariables {
 
     public static boolean initiallyCheckedBank = false;
 
+    public static int bankedLogs = 0;
+    public static int bankedJugPacks = 0;
+    public static int bankedPieDishes = 0;
+    public static int bankedPastryDough = 0;
+
     public static int bankedSoftClay = 0;
     public static int bankedClay = 0;
     public static int bankedJugs = 0;
