@@ -25,6 +25,10 @@ public class InitialCheckBankLeaf extends Leaf<Main> {
         _DynamicVariables.bankedClay = Bank.count("Clay");
         _DynamicVariables.bankedJugs = Bank.count("Jug");
         _DynamicVariables.bankedJugsOfWater = Bank.count("Jug of water");
+        _DynamicVariables.bankedPieDishes = Bank.count("Pie dish");
+        _DynamicVariables.bankedPastryDough = Bank.count("Pastry dough");
+        _DynamicVariables.bankedJugPacks = Bank.count("Empty jug pack");
+        _DynamicVariables.bankedLogs = Bank.count("Logs");
         myBank.bankedCoins = Bank.count("Coins");
         Sleep.sleep(10_000);
         return (int) Calculations.nextGaussianRandom(350, 250);
