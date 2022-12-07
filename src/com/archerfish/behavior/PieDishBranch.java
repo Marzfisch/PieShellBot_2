@@ -6,7 +6,7 @@ import org.dreambot.framework.Root;
 public class PieDishBranch extends Root<Main> {
     @Override
     public boolean isValid() {
-        return _DynamicVariables.initiallyCheckedBank;
+        return _ConstantVariables.initiallyCheckedBank;
     }
 
 }
